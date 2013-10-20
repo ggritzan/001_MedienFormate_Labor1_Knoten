@@ -11,18 +11,16 @@ Knoten::Knoten(int _data){
 
 }
 
-/*Methode zum löschen des Baums */
-void Knoten::LoescheBaum(Knoten *wurzel){
-	
-	if (wurzel == NULL) return;
+/*Destruktor*/
+Knoten::~Knoten(){
 
-	LoescheBaum(wurzel->left);
-	delete wurzel;
-	LoescheBaum(wurzel->right);
+	if (this->left != NULL)
+		delete this->left;
+	printf("delete left, ");
+	if (this->right != NULL)
+		delete this->right;
+	printf("delete right, ");
 
-	
-	
-	
 }
 
 /* Methode zum Erstellen neuer Baumknoten */
@@ -82,7 +80,7 @@ int main(){
 
 	/* löschen des Baums*/
 	
-	(*wurzel).LoescheBaum(wurzel);
+	delete wurzel;
 	
 
 	while(1){;} /* Endlosschleife */
