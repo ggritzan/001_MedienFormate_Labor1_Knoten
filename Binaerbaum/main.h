@@ -9,6 +9,7 @@ public:
     Knoten *left, *right;
 
 	// Konstruktor
+	Knoten();
 	Knoten(int data);
 
 	/* Konstruktor für Baumknoten */
