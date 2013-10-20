@@ -9,8 +9,10 @@ public:
     Knoten *left, *right;
 
 	// Konstruktor
-	Knoten();
+	Knoten();			// Standart-Konstruktor
 	Knoten(int data);
+	// Destructor -  dem Destructor werden niemal Parameter uebergeben
+	~Knoten();
 
 	/* Konstruktor für Baumknoten */
 	Knoten *NeuerKnoten(int data);
@@ -20,6 +22,9 @@ public:
 
 	/* Baumknoten “in-order“ ausgeben */
 	void PrintBaum(Knoten *wurzel);
+
+	/* alle Baumknoten löschen */
+	void LoescheBaum(Knoten *wurzel);
 };
 
 /* Testprogramm für Binaerbaum */

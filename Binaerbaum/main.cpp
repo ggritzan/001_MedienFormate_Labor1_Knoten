@@ -11,6 +11,20 @@ Knoten::Knoten(int _data){
 
 }
 
+/*Methode zum löschen des Baums */
+void Knoten::LoescheBaum(Knoten *wurzel){
+	
+	if (wurzel == NULL) return;
+
+	LoescheBaum(wurzel->left);
+	delete wurzel;
+	LoescheBaum(wurzel->right);
+
+	
+	
+	
+}
+
 /* Methode zum Erstellen neuer Baumknoten */
 Knoten* Knoten::NeuerKnoten(int data){
 
@@ -48,6 +62,8 @@ void Knoten::PrintBaum(Knoten *wurzel){
 	PrintBaum(wurzel->right);
 }
 
+
+
 /* Testprogramm für Binaerbaum */
 int main(){
 	
@@ -63,6 +79,11 @@ int main(){
 
     /* sortierte Liste ausgeben */
 	(*wurzel).PrintBaum(wurzel);
+
+	/* löschen des Baums*/
+	
+	(*wurzel).LoescheBaum(wurzel);
+	
 
 	while(1){;} /* Endlosschleife */
 }
