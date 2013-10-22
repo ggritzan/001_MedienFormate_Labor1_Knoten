@@ -13,13 +13,21 @@ Knoten::Knoten(int _data){
 
 /*Destruktor*/
 Knoten::~Knoten(){
+	
 
-	if (this->left != NULL)
+	if (this->left != NULL){
 		delete this->left;
-	printf("delete left, ");
-	if (this->right != NULL)
+		printf("delete left, ");
+	}
+
+	
+	if (this->right != NULL){
 		delete this->right;
 	printf("delete right, ");
+	}
+
+	
+	
 
 }
 

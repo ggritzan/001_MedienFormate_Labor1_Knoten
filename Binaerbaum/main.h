@@ -11,6 +11,7 @@ public:
 	// Konstruktor
 	Knoten();			// Standart-Konstruktor
 	Knoten(int data);
+
 	// Destructor -  dem Destructor werden niemal Parameter uebergeben
 	~Knoten();
 
