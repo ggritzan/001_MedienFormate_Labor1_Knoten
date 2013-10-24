@@ -3,9 +3,9 @@
 
 #include "main.h"
 /*Konstruktor*/
-Knoten::Knoten(int _data){
+Knoten::Knoten(int _data){ // c++ Notation zu der Klasse Knoten den Konstructor
 
-	data = _data;
+	data = _data; 
 	left = NULL;
 	right = NULL;
 
@@ -46,7 +46,7 @@ void Knoten::Einfueg( Knoten **w, int data){
     if( *w == NULL){
         /* hier einfuegen */
         *w = NeuerKnoten( data);
-        return;
+		return;
     }
 
     if( (*w)->data > data ){
@@ -68,11 +68,15 @@ void Knoten::PrintBaum(Knoten *wurzel){
 	PrintBaum(wurzel->right);
 }
 
+void Knoten::PrintBaumhöhe(int counter){
+	printf("Der Baum ist:%5d Elemente hoch!\n", counter);
+}
+
 
 
 /* Testprogramm für Binaerbaum */
 int main(){
-	
+	int counter = 0;
 	Knoten *wurzel = NULL;
     int     i, n = 8;
     int     a[] = {7,8,3,5,17,2,10,11};
@@ -81,6 +85,8 @@ int main(){
        den Baum einfuegen */       
     for( i=0; i<n; i++){
 		(*wurzel).Einfueg(&wurzel, a[i]);
+		counter++;
+		(*wurzel).PrintBaumhöhe(counter);
     }
 
     /* sortierte Liste ausgeben */
@@ -89,6 +95,7 @@ int main(){
 	/* löschen des Baums*/
 	
 	delete wurzel;
+	counter = 0;
 	
 
 	while(1){;} /* Endlosschleife */

@@ -6,7 +6,7 @@
 class Knoten{ // so koennte das in C++ aussehen
 public:
     int data;       
-    Knoten *left, *right;
+    Knoten *left, *right; // Zeiger auf Knoten (*Name_des_Zeigers  Datentyp Zeiger auf Knoten
 
 	// Konstruktor
 	Knoten();			// Standart-Konstruktor
@@ -26,6 +26,9 @@ public:
 
 	/* alle Baumknoten löschen */
 	void LoescheBaum(Knoten *wurzel);
+
+	/* gibt die Baumhöhe aus*/
+	void PrintBaumhöhe(int counter);
 };
 
 /* Testprogramm für Binaerbaum */
